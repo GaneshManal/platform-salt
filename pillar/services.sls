@@ -62,7 +62,7 @@ gobblin:
   release_version: develop
 
 console_frontend:
-  release_version: develop
+  release_version: github-45
 
 console_backend_data_logger:
   release_version: develop
