@@ -36,12 +36,11 @@ opentsdb-log_config:
 opentsdb-copy_defaults:
   file.managed:
     - name: /etc/default/opentsdb
-{% elif grains['os'] in ('RedHat', 'CentOS') %}
     - source: salt://opentsdb/templates/opentsdb.default.tpl
     - context:
       heap_size: {{ flavor_cfg.opentsdb_heapsize }}
     - template: jinja
-{% elif grains['os'] == 'RedHat' %}
+{% elif grains['os'] in ('RedHat', 'CentOS') %}
 opentsdb-copy_defaults:
   file.managed:
     - name: {{ opentsdb_home }}/opentsdb_env.sh
